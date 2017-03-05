@@ -1,5 +1,9 @@
 <section class="month">
-    <div class="month-title">{{model.currentDate.month}} {{model.currentDate.year}}</div>
+    <div class="month-title">
+        {{#link-to 'month' model.previousDate.year model.previousDate.month class="icon icon-chevron-left"}}{{/link-to}}        
+        <span class="month-title-content">{{model.currentDate.month}} {{model.currentDate.year}}</span>
+        {{#link-to 'month' model.followingDate.year model.followingDate.month class="icon icon-chevron-right"}}{{/link-to}}
+    </div>
     <div class="month-header">
         <div class="month-header-day">Sunday</div>
         <div class="month-header-day">Monday</div>
@@ -9,7 +13,7 @@
         <div class="month-header-day">Friday</div>
         <div class="month-header-day">Saturday</div>
     </div>
-    <div class="month-content">                
+    <div class="month-content">        
         {{#each model.weeks as |week|}}
             {{month-week week=week}}
         {{/each}}

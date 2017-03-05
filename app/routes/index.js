@@ -1,7 +1,10 @@
 import Ember from 'ember';
+import moment from 'npm:moment';
 
 export default Ember.Route.extend({
     redirect() {        
-        this.transitionTo('month');
+        let year = moment().year();
+        let month = moment().month()+1;
+        this.transitionTo('year.month', year, month);
     }
 });

@@ -1,9 +1,23 @@
 .month {
-    .month-title {
-        text-align: center;
+    .month-title {    
         font-size: 2.5vw;
-        padding: 10px 0;
+        padding: 10px 10px;
         color: $dark-green;
+        display: flex;
+        justify-content: space-between;
+
+        .icon {
+            position: relative;
+            top: 5px;
+            color: $dark-green;
+            text-decoration: none;
+            
+            @include transition(color .25s ease-in-out);
+
+            &:hover {
+                color: $green;
+            }
+        }
     }
 
     .month-header {
@@ -36,7 +50,7 @@
             text-align: right;
             border-right: $week-day-border;
             border-bottom: $week-day-border;
-            height: 90px;
+            height: 75px;
             padding: 10px 5px 0;
             font-size: 1.3vw;
             color: $dark-green;

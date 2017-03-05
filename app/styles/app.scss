@@ -1,6 +1,10 @@
 @import 'variables';
+@import 'mixins';
+
 @import 'month';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://file.myfontastic.com/XT2VTpwh6FpoyQPKrtV7gR/icons.css');
 
 body {
     font-family: 'Roboto', sans-serif;
