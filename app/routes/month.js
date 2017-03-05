@@ -18,11 +18,12 @@ export default Ember.Route.extend({
             year: moment().year(year).format('YYYY')
         };
     
-        for(let week = start; week.isSameOrBefore(end); ) {
-            let currentWeek = [];            
+        for(let week = start.startOf('week'); week.isSameOrBefore(end); ) {
+            let currentWeek = [];
             
             for(let j = 0; j < 7; j++) {
                 let otherMonth = start.month() !== month ? 'other-month': '';
+                
                 currentWeek.push({
                     day: start.date(),
                     month: start.month()+1,

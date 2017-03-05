@@ -1,4 +1,5 @@
 {{#each week as |day|}}
+    {{log day}}
     <div {{action 'onDayClick' day}} class="month-week-day {{day.otherMonth}}">
         {{day.day}}
     </div>
