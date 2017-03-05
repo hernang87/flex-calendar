@@ -1,6 +1,11 @@
 {{#each week as |day|}}
-    {{log day}}
-    <div {{action 'onDayClick' day}} class="month-week-day {{day.otherMonth}}">
+    <div {{action 'eventModal' day}} class="month-week-day {{day.otherMonth}}">
         {{day.day}}
     </div>
 {{/each}}
+
+{{#if isShowingModal}}
+    {{#modal-dialog close='eventModal' translucentOverlay=true}}
+        HOLA
+    {{/modal-dialog}}
+{{/if}}

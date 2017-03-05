@@ -6,5 +6,11 @@ export default Ember.Component.extend({
     
     init() {
         this._super(...arguments);             
+    },
+
+    actions: {
+        eventModal(params) {
+            this.toggleProperty('isShowingModal');
+        }
     }
 });
