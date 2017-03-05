@@ -19,13 +19,14 @@ export default Ember.Route.extend({
         };
     
         for(let week = start; week.isSameOrBefore(end); ) {
-            let currentWeek = []
-            let weekStart = start.startOf('week');
+            let currentWeek = [];            
             
             for(let j = 0; j < 7; j++) {
                 let otherMonth = start.month() !== month ? 'other-month': '';
                 currentWeek.push({
-                    dayValue: start.date(),
+                    day: start.date(),
+                    month: start.month()+1,
+                    year: start.year()+1,
                     otherMonth
                 });
                 start = start.add(1, 'day');
@@ -57,6 +58,6 @@ export default Ember.Route.extend({
         return {
             previousDate,
             followingDate
-        }
+        };
     }
 });

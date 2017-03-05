@@ -4,7 +4,7 @@ import moment from 'npm:moment';
 export default Ember.Route.extend({
     redirect() {        
         let year = moment().year();
-        let month = moment().month()+1;
-        this.transitionTo('year.month', year, month);
+        let month = moment().month() + 1;
+        this.transitionTo('month', year, month);
     }
 });

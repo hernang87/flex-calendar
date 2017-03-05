@@ -1,3 +1,5 @@
 {{#each week as |day|}}
-    <div class="month-week-day {{day.otherMonth}}">{{day.dayValue}}</div>
+    <div {{action 'onDayClick' day}} class="month-week-day {{day.otherMonth}}">
+        {{day.day}}
+    </div>
 {{/each}}

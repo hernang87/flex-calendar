@@ -2,8 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     classNames: ['month-week'],
+    isShowingModal: false,
     
-    init: function() {
-        this._super(...arguments);        
+    init() {
+        this._super(...arguments);             
     }
 });
