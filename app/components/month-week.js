@@ -16,14 +16,12 @@ export default Ember.Component.extend({
         return moment(`${params.date} ${params.time}`, 'DD/MM/YYYY HH:mm');                
     },
 
-    generateUUID() {
-        
-    },
-
     actions: {
         eventModal(params) {
             if(params) {
                 let startDate = moment().year(params.year).month(parseInt(params.month) - 1).date(params.day);   
+                
+                this.currentDate = params;
 
                 this.startDay = startDate.format('DD/MM/YYYY');
                 this.startTime = startDate.startOf('hour').format('HH:mm');
@@ -52,7 +50,12 @@ export default Ember.Component.extend({
                 address: this.address,
                 start,
                 end
-            });                        
+            });
+
+            this.currentDate.events.push(event);
+            console.log(this.currentDate)
+
+            this.toggleProperty('isShowingModal');                     
         }
     }
 });

@@ -1,13 +1,17 @@
 {{#each week as |day|}}
     <div {{action 'eventModal' day}} class="month-week-day {{day.otherMonth}}">
-        {{renderDay day}}        
+        {{day.day}}
+
+        {{#each day.events as |event|}}
+            {{event}}
+        {{/each}}
     </div>
 {{/each}}
 
 {{#if isShowingModal}}
     {{#modal-dialog close='eventModal' translucentOverlay=true}}
         <form class="form" {{action 'newEvent' on='submit'}}>
-            <div class="field-container row">
+            <div class="field-container">
                 <label for="start-date">Start</label>
                 {{input type="text" value=startDay id="start-date"}}
                 {{input type="text" value=startTime id="start-time"}}

@@ -28,6 +28,7 @@ export default Ember.Route.extend({
                     day: start.date(),
                     month: start.month()+1,
                     year: start.year()+1,
+                    events: [],
                     otherMonth
                 });
                 start = start.add(1, 'day');
