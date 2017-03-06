@@ -46,15 +46,18 @@ export default Ember.Route.extend({
     },
 
     calculateAdjacentDates(year, month) {
+        let start = moment().year(year).month(month).startOf('month').subtract(1, 'month');
+        let end = moment().year(year).month(month).endOf('month').add(1, 'month');
+        
         let previousDate = {
-            month: moment().month(month).subtract(1, 'month').format('MM'),
-            year: moment().year(year).subtract(1, 'month').format('YYYY')
+            month: start.format('MM'),
+            year: start.format('YYYY')
         };
 
         let followingDate = {
-            month: moment().month(month).add(1, 'month').format('MM'),
-            year: moment().year(year).add(1, 'month').format('YYYY')            
-        };
+            month: end.format('MM'),
+            year: end.format('YYYY')            
+        }; 
         
         return {
             previousDate,
