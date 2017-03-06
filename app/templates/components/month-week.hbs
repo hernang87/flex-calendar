@@ -1,6 +1,6 @@
 {{#each week as |day|}}
     <div {{action 'eventModal' day}} class="month-week-day {{day.otherMonth}}">
-        {{day.day}}
+        {{renderDay day}}        
     </div>
 {{/each}}
 
