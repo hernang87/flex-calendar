@@ -27,8 +27,7 @@ export default Ember.Route.extend({
                 currentWeek.push({
                     day: start.date(),
                     month: start.month()+1,
-                    year: start.year()+1,
-                    events: [],
+                    year: start.year()+1,                    
                     otherMonth
                 });
                 start = start.add(1, 'day');

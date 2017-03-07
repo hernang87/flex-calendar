@@ -69,6 +69,14 @@
                 color: $gray;
                 background: $light-gray;
             }
+
+            .day-event {
+                background: $green;
+                color: white;
+                font-size: 10px;
+                padding: 5px;
+                text-align: left;
+            }
         }
     }
 }
